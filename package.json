@@ -9,9 +9,8 @@
   ],
   "main": "./lib/client.js",
   "scripts": {
-    "test": "npm run lint && mocha",
-    "cover": "istanbul cover --report html _mocha",
-    "check-coverage": "npm run cover && istanbul check-coverage --lines 75 --statements 75 --functions 75 --branches 70",
+    "pretest": "npm run lint",
+    "test": "nyc mocha",
     "lint": "jshint . --verbose"
   },
   "repository": {
@@ -28,26 +27,26 @@
     "backoff-func": "^0.1.2",
     "bluebird": "^3.7.2",
     "lodash": "^4.17.15",
+    "nyc": "^15.0.1",
     "request": "^2.88.2",
     "swagger-client": "2.0.26",
-    "uuid": "^3.4.0",
-    "ws": "^6.2.1"
+    "uuid": "^7.0.3",
+    "ws": "^7.2.3"
   },
   "engines": {
     "node": ">=8"
   },
   "devDependencies": {
-    "async": "^2.6.3",
+    "async": "^3.2.0",
     "env-test": "^1.0.0",
     "grunt": "^1.1.0",
     "grunt-cli": "^1.3.2",
     "grunt-jsdoc": "^2.4.1",
-    "hock": "^1.4.0",
-    "istanbul": "^0.4.4",
+    "hock": "^1.4.1",
     "jshint": "^2.11.0",
-    "mocha": "^5.2.0",
+    "mocha": "^7.1.1",
     "moment": "^2.24.0",
-    "mustache": "^2.2.1",
+    "mustache": "^4.0.1",
     "portfinder": "^1.0.25"
   }
 }

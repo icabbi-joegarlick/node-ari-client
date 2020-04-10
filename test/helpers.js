@@ -47,7 +47,10 @@ function createWebSocketServer (httpserver) {
      */
     send: function (msg) {
       if (socket) {
-        socket.send(JSON.stringify(msg));
+        if (socket.readyState === 3) {
+          throw Error('Socket closed');
+        }
+          socket.send(JSON.stringify(msg));
       }
     },
 
